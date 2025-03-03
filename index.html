@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aangifte erfbelasting</title>
+    <link href="./styles/styles.css" rel="stylesheet">
+    <link href="https://static-ns-nl-data.fep-p.cla.ns.nl/apps/nessie/fonts/1.0.1/nssans-regular.woff2">
+</head>
+<body>
+    <header>
+        <h2>Dit is een schoolproject, niet een echt formulier!</h2>
+    </header>
+
+    <main>
+        <section>
+            <img src="./images/Nederlandse-spoorwegen-NS-logo.png" width="90" height="70">
+            <h1>Aangifte erfbelasting</h1>
+            <p>Met dit formulier doet u aangifte erfbelasting voor een overlijden in 2023. De aangifte erfbelasting moet binnen 8 maanden na de overlijdensdatum bij de Belastingdienst binnen zijn. Mocht u meer tijd nodig hebben, kunt u uitstel aanvragen via de Belastingdienst.</p>
+            <!-- <h2>Gegevens overlijdenspersoon</h2> -->
+        
+            <!-- <form action="" method="get" class="form-example">
+                <ul>
+                    <li>
+                        <div>
+                            <label for="first_name">Voornaam</label>
+                            <input type="text" name="first_name" id="first_name" required />
+                        </div>
+                        <div>
+                            <label for="middle_name">Tussenvoegsel</label>
+                            <input type="text" name="middle_name" id="middle_name"/>
+                        </div>
+                        <div>
+                            <label for="last_name">Achternaam</label>
+                            <input type="text" name="last_name" id="last_name" required />
+                        </div>
+                    </li>
+                    <li>
+                        <label for="email">Emailadres</label>
+                        <input type="email" name="email" id="email" required />
+                    </li>
+                    <li>
+                        <label for="bsn">Burgerservicenummer</label>
+                        <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                               maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+                    </li>
+                    <li>
+                        <label>Overlijdensdatum</label>
+                        <div>
+                            <input type="number" name="death_day" id="death_day" placeholder="DD" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="31" />
+                            <input type="number" name="death_month" id="death_month" placeholder="MM" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="12" />
+                            <input type="number" name="death_year" id="death_year" placeholder="YYYY" pattern="\d{4}" maxlength="4" required inputmode="numeric" min="1900" max="2025" value="2025" />
+                        </div>
+                    </li>
+                </ul>
+            </form> -->
+            
+            <form>
+                <fieldset>
+                    <legend>Persoonsgegevens overlijdenspersoon</legend>
+
+                    <div>
+                        <div>
+                            <label for="first_name">Voornaam</label>
+                            <input type="text" name="first_name" id="first_name" required />
+                        </div>
+                        <div>
+                            <label for="middle_name">Tussenvoegsel</label>
+                            <input type="text" name="middle_name" id="middle_name"/>
+                        </div>
+                        <div>
+                            <label for="last_name">Achternaam</label>
+                            <input type="text" name="last_name" id="last_name" required />
+                        </div>
+                    </div>
+
+                    <label for="email">Emailadres</label>
+                    <input type="email" name="email" id="email" required />
+
+                    <label for="bsn">Burgerservicenummer</label>
+                    <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                            maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+
+                    <label>Overlijdensdatum</label>
+                    <div>
+                        <input type="number" name="death_day" id="death_day" placeholder="DD" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="31" />
+                        <input type="number" name="death_month" id="death_month" placeholder="MM" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="12" />
+                        <input type="number" name="death_year" id="death_year" placeholder="YYYY" pattern="\d{4}" maxlength="4" required inputmode="numeric" min="1900" max="2025" value="2025" />
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
