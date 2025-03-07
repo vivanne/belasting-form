@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     font-family: "NS Sans", Arial, sans-serif;
@@ -7,125 +12,6 @@ body {
     min-width: 20rem;
 }
 
-
-:root {
-    --cc-primary-color: var(--webchat-primary-color, #2455e6);
-    --cc-primary-color-hover: color-mix(in srgb, var(--cc-primary-color), #000 20%);
-    --cc-primary-color-disabled: color-mix(in srgb, var(--cc-primary-color), #fff 80%);
-    --cc-primary-color-opacity-10: color-mix(in srgb, var(--cc-primary-color) 10%, transparent);
-    --cc-primary-color-opacity-20: color-mix(in srgb, var(--cc-primary-color) 20%, transparent);
-    --cc-primary-contrast-color: var(--webchat-primary-contrast-color, #fdfcfc);
-    --cc-secondary-color: var(--webchat-secondary-color, #1a1a1a);
-    --cc-secondary-color-hover: color-mix(in srgb, var(--cc-secondary-color), #fff 20%);
-    --cc-secondary-color-disabled: color-mix(in srgb, var(--cc-secondary-color), #fff 90%);
-    --cc-secondary-color-opacity-10: color-mix(in srgb, var(--cc-secondary-color) 10%, transparent);
-    --cc-secondary-color-opacity-20: color-mix(in srgb, var(--cc-secondary-color) 20%, transparent);
-    --cc-secondary-contrast-color: var(--webchat-secondary-contrast-color, #fff);
-    --cc-background-bot-message: var(--webchat-background-bot-message, #fff);
-    --cc-background-user-message: var(--webchat-background-user-message, #e8ebff);
-    --cc-background-agent-message: var(
-        --webchat-background-agent-message,
-        var(--cc-background-bot-message)
-    );
-    --cc-text-link: var(--webchat-text-link, #335fdf);
-    --cc-text-link-hover: color-mix(in srgb, var(--cc-text-link), #000 20%);
-    --cc-text-link-disabled: color-mix(in srgb, var(--cc-text-link), #fff 90%);
-    --cc-black-10: #1a1a1a;
-    --cc-black-20: #333;
-    --cc-black-30: #4d4d4d;
-    --cc-black-40: #666;
-    --cc-black-50: #808080;
-    --cc-black-60: #999;
-    --cc-black-80: #ccc;
-    --cc-black-90: #e5e5e5;
-    --cc-black-95: #f2f2f2;
-    --cc-white: #fff;
-    --cc-text-dark: var(--webchat-text-dark, --cc-black-10);
-    --cc-text-light: var(--webchat-text-light, --cc-white);
-    --cc-bubble-border-radius: var(--webchat-bubble-border-radius, 15px);
-    --cc-border-bot-message: var(--webchat-border-bot-message, var(--cc-black-80));
-    --cc-border-user-message: var(--webchat-border-user-message, transparent);
-    --cc-border-agent-message: var(--webchat-border-agent-message, var(--cc-border-bot-message));
-    --cc-bot-message-contrast-color: var(--webchat-bot-message-contrast-color, #1c1c1c);
-    --cc-user-message-contrast-color: var(--webchat-user-message-contrast-color, #1c1c1c);
-    --cc-agent-message-contrast-color: var(--webchat-agent-message-contrast-color, #1c1c1c);
-}
-
-@font-face {
-    font-family: "NS Sans";
-    src: url("./fonts/nssans-regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "NS Sans";
-    src: url("fonts/nssans-bold.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "NS Sans";
-    src: url("fonts/nssans-italic.woff2") format("woff2");
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "NS Sans";
-    src: url("fonts/nssans-bolditalic.woff2") format("woff2");
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "NS Sans";
-    src: url("fonts/nssans-demi.woff2") format("woff2");
-    font-weight: 600; /* Demi-bold zit meestal tussen regular (400) en bold (700) */
-    font-style: normal;
-}
-
-p {
-    font-family: "NS Sans", sans-serif;
-    font-weight: normal;
-    font-size: 1.125rem;
-    line-height: 1.875rem;
-}
-
-strong {
-    font-weight: bold;
-}
-
-em {
-    font-style: italic;
-}
-
-.demibold-text {
-    font-weight: 600;
-}
-
-.bold-italic-text {
-    font-weight: bold;
-    font-style: italic;
-}
-
-h1 {
-    font-weight: normal;
-    font-size: 2.85rem;
-    line-height: 2.8125rem;
-    margin-top: 0;
-}
-
-
-
-/* --------- standaard instellingen ---------- */
-
-li {
-    list-style: none;
-}
-/* -------------------- section 1: intro ---------------------- */
-
 section:nth-of-type(1) {
     margin: 10% 5%;
     padding: 5%;
@@ -133,62 +19,56 @@ section:nth-of-type(1) {
     border-radius: 10px;
 }
 
-section:nth-of-type(1) a{
+/* --------- form standaard instellingen ----------------------------------*/
+
+form {
+    position: relative;
+    margin: 0 auto;
+    padding: 5%;
+    box-sizing: border-box;
+  }
+
+fieldset {
+    border: none;
+    height: auto;
+}
+
+/* buttons */
+
+button{
     padding: 15px 30px;
     background-color: var(--cc-text-link);
     border-radius: 10px;
+    border: none;
     
     color: var(--cc-white);
     text-decoration: none;
 }
 
-section:nth-of-type(1) a:hover{
+button:hover{
     background-color: var(--cc-text-link-hover);
 }
 
-
-form {
-    position: relative;
-    margin: 0 auto;
-    padding: 1em;
-    box-sizing: border-box;
-    background: #fff url(background.jpg);
-  
-    /* we create our grid */
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(10, auto);
-  }
-
-form li {
-    display: flex;
-    flex-direction: column;
-}
+/* --------- fieldset 1: Persoonsgegevens overlijdenspersoon ------------- */
 
 form div {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 form label {
     padding-top: 20px;
 }
 
-section:nth-of-type(1) form li:nth-of-type(1) {
-    flex-direction: row;
-}
-
-section:nth-of-type(1) form li:nth-of-type(1) div {
-    padding-right: 10px;
-}
-
-form input {
+form label input {
     border: .0625rem solid #cdcdd3;
     display: block;
     height: 2.8125rem;
+    margin-right: 30px;
     padding: 0px 10px;
     border-radius: .25rem;
+    width: 250px;
 }
 
 #bsn {
@@ -203,3 +83,23 @@ section:nth-of-type(1) form li:nth-of-type(4) div{
 section:nth-of-type(1) form li:nth-of-type(4) div input{
     min-width: 50px;
 }
+
+/* -------------------- radio buttons --------------------- */
+
+.expandable {
+    display: none;
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  /* Laat .expandable zien als "Yes" is geselecteerd */
+  input[type="radio"]:checked + .expandable {
+    display: block;
+}
+
+
+/* --------- UX aspecten -------- */
+
+/* label::after:has(input:required) {
+    content: "*";
+} */

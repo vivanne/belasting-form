@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aangifte erfbelasting</title>
     <link href="./styles/styles.css" rel="stylesheet">
+    <link href="./styles/colors.css" rel="stylesheet">
+    <link href="./styles/fonts.css" rel="stylesheet">
     <link href="https://static-ns-nl-data.fep-p.cla.ns.nl/apps/nessie/fonts/1.0.1/nssans-regular.woff2">
 </head>
 <body>
@@ -17,77 +19,121 @@
             <img src="./images/Nederlandse-spoorwegen-NS-logo.png" width="90" height="70">
             <h1>Aangifte erfbelasting</h1>
             <p>Met dit formulier doet u aangifte erfbelasting voor een overlijden in 2023. De aangifte erfbelasting moet binnen 8 maanden na de overlijdensdatum bij de Belastingdienst binnen zijn. Mocht u meer tijd nodig hebben, kunt u uitstel aanvragen via de Belastingdienst.</p>
-            <!-- <h2>Gegevens overlijdenspersoon</h2> -->
-        
-            <!-- <form action="" method="get" class="form-example">
-                <ul>
-                    <li>
-                        <div>
-                            <label for="first_name">Voornaam</label>
-                            <input type="text" name="first_name" id="first_name" required />
-                        </div>
-                        <div>
-                            <label for="middle_name">Tussenvoegsel</label>
-                            <input type="text" name="middle_name" id="middle_name"/>
-                        </div>
-                        <div>
-                            <label for="last_name">Achternaam</label>
-                            <input type="text" name="last_name" id="last_name" required />
-                        </div>
-                    </li>
-                    <li>
-                        <label for="email">Emailadres</label>
-                        <input type="email" name="email" id="email" required />
-                    </li>
-                    <li>
-                        <label for="bsn">Burgerservicenummer</label>
-                        <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
-                               maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
-                    </li>
-                    <li>
-                        <label>Overlijdensdatum</label>
-                        <div>
-                            <input type="number" name="death_day" id="death_day" placeholder="DD" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="31" />
-                            <input type="number" name="death_month" id="death_month" placeholder="MM" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="12" />
-                            <input type="number" name="death_year" id="death_year" placeholder="YYYY" pattern="\d{4}" maxlength="4" required inputmode="numeric" min="1900" max="2025" value="2025" />
-                        </div>
-                    </li>
-                </ul>
-            </form> -->
             
             <form>
+                <!----------------- VOOR WIE DOET U AANGIFTE ---------------->
                 <fieldset>
+                    <progress id="progressbar" max="20" value="0">0%</progress>
                     <legend>Persoonsgegevens overlijdenspersoon</legend>
 
+                    <div class="name">
+                            <label for="first_name">Voornaam *
+                                <input type="text" name="first_name" id="first_name" required />
+                            </label>
+
+                            <label for="middle_name">Tussenvoegsel 
+                                <input type="text" name="middle_name" id="middle_name"/>
+                            </label>
+
+                            <label for="last_name">Achternaam *
+                                <input type="text" name="last_name" id="last_name" required />
+                            </label>
+
+                    </div>
+
+                    <label for="bsn">Burgerservicenummer *
+                        <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                        maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+                    </label>
+
+
+                    <label>Overlijdensdatum *
+                        <div>
+                            <input type="number" name="death_day" id="death_day" placeholder="DD" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="31"/>
+                            <input type="number" name="death_month" id="death_month" placeholder="MM" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="12"/>
+                            <input type="number" name="death_year" id="death_year" placeholder="YYYY" pattern="\d{4}" maxlength="4" required inputmode="numeric" min="1900" max="2025" value="2025"/>
+                        </div>
+                    </label>
+
+                    <p>Was de overledene getrouwd of had de overledene een
+                        geregistreerd partner op het moment van overlijden? *</p>
                     <div>
-                        <div>
-                            <label for="first_name">Voornaam</label>
-                            <input type="text" name="first_name" id="first_name" required />
-                        </div>
-                        <div>
-                            <label for="middle_name">Tussenvoegsel</label>
-                            <input type="text" name="middle_name" id="middle_name"/>
-                        </div>
-                        <div>
-                            <label for="last_name">Achternaam</label>
-                            <input type="text" name="last_name" id="last_name" required />
+                        <label>
+                            Nee
+                        </label>
+                        <input class="radio" type="radio" name="getrouwd" value="nee" required/>
+                        <label>
+                            Ja
+                        </label>
+                        <input type="radio" name="getrouwd" value="ja"/>
+                        <div class="expandable">
+                            <p>Hadden de overledene en diens echtgenoot of
+                                geregistreerd partner huwelijkse of partner schaps-
+                                voorwaarden laten vastleggen in een notariële akte? *</p>
+
+                            <label>
+                                Nee
+                                <input type="radio" name="akte" value="nee"/>
+                            </label>
+    
+                            <label>
+                                Ja
+                                <input type="radio" name="akte" value="ja"/>
+                            </label>
+
+                            <p>Hadden de overledene en diens partner een finaal
+                                verrekenbeding? *</p>
+                            <label>
+                                Ja
+                                <input type="radio" name="finaal verrekenbeding" value="ja"/>
+                            </label>
+                            <label>
+                                Nee
+                                <input type="radio" name="finaal verrekenbeding" value="nee"/>
+                            </label>
                         </div>
                     </div>
 
-                    <label for="email">Emailadres</label>
-                    <input type="email" name="email" id="email" required />
-
-                    <label for="bsn">Burgerservicenummer</label>
-                    <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
-                            maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
-
-                    <label>Overlijdensdatum</label>
-                    <div>
-                        <input type="number" name="death_day" id="death_day" placeholder="DD" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="31" />
-                        <input type="number" name="death_month" id="death_month" placeholder="MM" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="12" />
-                        <input type="number" name="death_year" id="death_year" placeholder="YYYY" pattern="\d{4}" maxlength="4" required inputmode="numeric" min="1900" max="2025" value="2025" />
-                    </div>
                 </fieldset>
+
+                <!----------------- VOOR WIE DOET U AANGIFTE ---------------->
+                <fieldset>
+                    <legend>Voor wie doet u aangifte?</legend>
+                    <p>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen?
+                        Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).
+                        Lees de toelichting bij vraag 3a.
+                    </p>
+                    <label>
+                        Ik ben executeur en doe aangifte voor alle personen en/of instellingen die
+                        iets krijgen uit de nalatenschap (verkrijgers). Geef aan voor hoeveel verkrijgers u
+                        aangifte doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee.
+                    </label>
+                    <input type="radio" name="executeur" value="yes"/>
+
+                    <label>
+                        Er is geen executeur aangewezen.
+                    </label>
+                    <input type="radio" name="executeur" value="no"/>
+                    <div class="expandable">
+                        <p>Selecteer welke situatie voor u geldt</p>
+                        <select name="choice">
+                            <option value="first">Ik ben erfgenaam en gemachtigd om aangifte te doen voor meerdere mensen</option>
+                            <option value="second" selected>ik ben erfgenaam en doe samen met andere erfgenamen aangifte</option>
+                            <option value="third">ik ben erfgenaam en doe voor mijzelf aangifte</option>
+                            <option value="fourth">ik ben geen erfgenaam, maar gemachtigd aangifte te doen</option>
+                        </select>
+
+                          <div class="extra-field">
+                            <label>Voor hoeveel mensen doet u aangifte?</label>
+                            <input type="number" name="num_people" min="1" max="100" placeholder="Aantal personen">
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <!-- ------------------- FIELDSET 3 ---------------------- -->
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
             </form>
         </section>
     </main>
