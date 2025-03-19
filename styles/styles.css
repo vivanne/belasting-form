@@ -193,13 +193,10 @@ label:has(input[type="checkbox"]:checked) ~ .inklap {
     margin-top: 5px;
 }
 
-@supports(selector(:has(input[type="radio"]:checked))){
+@supports selector(:has(*)) {
     label:has([type="radio"]:not(:checked)) + .expandable {
         display: none;
     }
-}
-
-@supports(selector(:has(input[type="checkbox"]:checked))){
     label:has(input[type="checkbox"]:checked) ~ .inklap {
         display: none;
     }

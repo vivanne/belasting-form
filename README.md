@@ -153,7 +153,7 @@ label:has(input[type="checkbox"]:checked) ~ .inklap {
 }
 ```
 
-Dit heb ik aangepast naar:
+- **Oplossing:**
 
 ```css
 .expandable {
@@ -166,55 +166,15 @@ Dit heb ik aangepast naar:
   margin-top: 5px;
 }
 
-@supports (selector(:has(input[type="radio"]:checked))) {
+@supports selector(:has(*)) {
   label:has([type="radio"]:not(:checked)) + .expandable {
     display: none;
   }
-}
-
-@supports (selector(:has(input[type="checkbox"]:checked))) {
   label:has(input[type="checkbox"]:checked) ~ .inklap {
     display: none;
   }
 }
 ```
-
-```css
-/* progress bar */
-
-progress {
-  width: 100%;
-  height: 20px;
-  margin-top: 20px;
-  border-radius: 5px;
-}
-
-.step {
-  display: none;
-  margin-top: 20px;
-  border-radius: 5px;
-}
-
-#step1:target ~ #progressbar {
-  value: 25;
-}
-
-#step2:target ~ #progressbar {
-  value: 50;
-}
-
-#step3:target ~ #progressbar {
-  value: 75;
-}
-
-#step4:target ~ #progressbar {
-  value: 100;
-}
-```
-
-- **Oplossing:**
-
-Ik heb mezelf een tijdlimiet van 35 minuten gegeven om verder uit te zoeken hoe het zou moeten werken, maar het is me niet gelukt binnen mijn tijdsframe het op te lossen. En dus ben ik doorgegaan naar een andere taak.
 
 ## 💻 Bronnen
 
