@@ -163,7 +163,7 @@ section:nth-of-type(1) form li:nth-of-type(4) div input{
 
 /* -------------------- radio buttons --------------------- */
 
-@supports selector(:checked){
+/* @supports selector(:checked){
     .expandable {
         display: none;
         margin-top: 5px;
@@ -174,8 +174,6 @@ section:nth-of-type(1) form li:nth-of-type(4) div input{
     }
 }
 
-/* + suppport has */
-  /* Laat .expandable zien als "Yes" is geselecteerd */
 label:has(input[type="radio"]:checked) + .expandable {
     display: block;
 }
@@ -183,7 +181,30 @@ label:has(input[type="radio"]:checked) + .expandable {
 
 label:has(input[type="checkbox"]:checked) ~ .inklap {
     display: none;
+} */
+
+.expandable {
+    display: block;
+    margin-top: 5px;
+  }
+
+.inklap {
+    display: block;
+    margin-top: 5px;
 }
+
+@supports(selector(:has(input[type="radio"]:checked))){
+    label:has([type="radio"]:not(:checked)) + .expandable {
+        display: none;
+    }
+}
+
+@supports(selector(:has(input[type="checkbox"]:checked))){
+    label:has(input[type="checkbox"]:checked) ~ .inklap {
+        display: none;
+    }
+}
+
 
 select{
     appearance: none;
@@ -257,6 +278,7 @@ progress {
     border-radius: 5px;
 }
 
+/* 
 #step1:target ~ #progressbar {
     value: 25;
 }
@@ -271,4 +293,4 @@ progress {
 
 #step4:target ~ #progressbar {
     value: 100;
-}
+} */
