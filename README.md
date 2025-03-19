@@ -21,6 +21,13 @@
 
 Ik heb de basic styling van ns gehaald. Van NS heb ik een formulier gekregen (van Quinten) zie bronnenlijst.
 
+Ik heb gekozen voor bepaalde stukken uit het formulier. Allereerst omdat ik nog best beginnend ben met formulieren ga ik de basic invulvelden van 1a bouwen. Dan ga ik daarna door met gedeelte twee waar je op een gegeven moment 1 van de 3 nummers in moet voeren (zie bijlages hieronder). En dan pak ik deel 3 waar ik verkrijgers handmatig kan gaan toevoegen ipv een vast aantal.
+
+![1](./images/Screenshot 2025-03-19 at 13.33.20.png)
+![2](./images/Screenshot 2025-03-19 at 13.33.52.png)
+![3](./images/Screenshot 2025-03-19 at 13.34.26.png)
+![3](./images/Screenshot 2025-03-19 at 13.35.00.png)
+
 - **Probleem:** Tijdens de eerste paar dagen kon ik nog niet helemaal goed bepalen hoe nou een basisopzet voor een formulier eruit zou zien. Dit had ik gedaan doormiddel van ul en li elementen. In het gesprek op vrijdag kwam ik erachter dat dit overbodig was. En dat ik gebruik moest gaan maken van fieldset elementen.
 
 - **Oplossing:** Ik ben onderzoek gaan doen naar Fieldset elementen op mozzilla.org en weet nu ongeveer m'n basis op te zetten.
@@ -66,11 +73,13 @@ Ik heb de basic styling van ns gehaald. Van NS heb ik een formulier gekregen (va
 
 - **Probleem:**
 
-Het is me nog neit gelukt om mijn progress bar werkend te krijgen. Ik heb het geprobeerd met deze bron en target selectors:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress.
+- Ik heb een stuk javascript geschreven waarbij ik moet nadenken over wat er gebeurt stel javascript ligt eruit. Als dat het geval zou zijn zou het formulier niet meer ingevuld kunnen worden voor dat gedeelte.
 
-elk gedeelte heb ik voor het opdelen van de content in een aparte fieldset gezet met een id: #step1,2,3 etc.
-dit heb ik geprobeerd:
+- Het is me nog neit gelukt om mijn progress bar werkend te krijgen. Ik heb het geprobeerd met deze bron en target selectors:
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress.
+
+  elk gedeelte heb ik voor het opdelen van de content in een aparte fieldset gezet met een id: #step1,2,3 etc.
+  dit heb ik geprobeerd:
 
 ```css
 /* progress bar */
@@ -107,7 +116,9 @@ progress {
 
 - **Oplossing:**
 
-Ik heb mezelf een tijdlimiet van 35 minuten gegeven om verder uit te zoeken hoe het zou moeten werken, maar het is me niet gelukt binnen mijn tijdsframe het op te lossen. En dus ben ik doorgegaan naar een andere taak.
+- Javascript probleem: <noscript> tag
+
+- Ik heb mezelf een tijdlimiet van 35 minuten gegeven om verder uit te zoeken hoe het zou moeten werken, maar het is me niet gelukt binnen mijn tijdsframe het op te lossen. En dus ben ik doorgegaan naar een andere taak.
 
 ---
 
