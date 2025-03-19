@@ -42,16 +42,62 @@
 
 ### 🎯 Doelen
 
-- [ ] HTML verder werken -> laat stijling voor later
-- [ ] UX aspecten verwerken: error prevention/ meldingen bij lege invoer etc.
+- [x] HTML verder werken -> laat stijling voor later
+- [x] UX aspecten verwerken: error prevention/ meldingen bij lege invoer etc.
 
 ### ✅ To-Do Lijst
 
-- []
-- [ ]
+- [x] placeholders toevoegen
+- [x] verkrijgers stuk
+- [x] algemene stijling
+- [x] buttons stijlen
+- [ ] progressbar laten werken
 
 ### 📝 Obstakels & Notities
 
 - **Probleem:**
 
+Het is me nog neit gelukt om mijn progress bar werkend te krijgen. Ik heb het geprobeerd met deze bron en target selectors:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress.
+
+elk gedeelte heb ik voor het opdelen van de content in een aparte fieldset gezet met een id: #step1,2,3 etc.
+dit heb ik geprobeerd:
+
+```css
+/* progress bar */
+
+progress {
+  width: 100%;
+  height: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.step {
+  display: none;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+#step1:target ~ #progressbar {
+  value: 25;
+}
+
+#step2:target ~ #progressbar {
+  value: 50;
+}
+
+#step3:target ~ #progressbar {
+  value: 75;
+}
+
+#step4:target ~ #progressbar {
+  value: 100;
+}
+```
+
 - **Oplossing:**
+
+## 💻 Bronnen
+
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset

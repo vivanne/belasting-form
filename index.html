@@ -12,38 +12,41 @@
 <body>
     <header>
         <h2>Dit is een schoolproject, niet een echt formulier!</h2>
+        <img src="./images/Nederlandse-spoorwegen-NS-logo.png" width="90" height="70">
     </header>
 
     <main>
         <section>
-            <img src="./images/Nederlandse-spoorwegen-NS-logo.png" width="90" height="70">
+
             <h1>Aangifte erfbelasting</h1>
             <p>Met dit formulier doet u aangifte erfbelasting voor een overlijden in 2023. De aangifte erfbelasting moet binnen 8 maanden na de overlijdensdatum bij de Belastingdienst binnen zijn. Mocht u meer tijd nodig hebben, kunt u uitstel aanvragen via de Belastingdienst.</p>
             
             <form>
-                <!----------------- VOOR WIE DOET U AANGIFTE ---------------->
-                <fieldset>
-                    <progress id="progressbar" max="20" value="0">0%</progress>
-                    <legend>Persoonsgegevens overlijdenspersoon</legend>
+                <!----------- nav ------------ -->
+
+                <!----------------- 1. PERSOONSGEGEVENS OVERLIJDENSPERSOON ---------------->
+                <fieldset id="step1" class="step">
+
+                    <legend class="hoofdkop"><b>Stap 1 van de 13</b><br><br>Persoonsgegevens overlijdenspersoon</legend>
 
                     <div class="name">
                             <label for="first_name">Voornaam *
-                                <input type="text" name="first_name" id="first_name" required />
+                                <input type="text" name="first_name" placeholder="Bijv. Vivanne" required />
                             </label>
 
-                            <label for="middle_name">Tussenvoegsel 
-                                <input type="text" name="middle_name" id="middle_name"/>
+                            <label for="middle_name">Tussenvoegsel <i>Optioneel</i>
+                                <input type="text" name="tussenvoegsel" placeholder="Bijv. van der"/>
                             </label>
 
                             <label for="last_name">Achternaam *
-                                <input type="text" name="last_name" id="last_name" required />
+                                <input type="text" name="last_name" placeholder="Bijv. Hoogendam" required />
                             </label>
 
                     </div>
 
                     <label for="bsn">Burgerservicenummer *
-                        <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
-                        maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+                        <input type="text" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                        maxlength="9" placeholder="Bijv. 123456789" required title="Vul een geldig 9-cijferig BSN in">
                     </label>
 
 
@@ -51,91 +54,268 @@
                         <div>
                             <input type="number" name="death_day" id="death_day" placeholder="DD" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="31"/>
                             <input type="number" name="death_month" id="death_month" placeholder="MM" pattern="\d{2}" maxlength="2" required inputmode="numeric" min="1" max="12"/>
-                            <input type="number" name="death_year" id="death_year" placeholder="YYYY" pattern="\d{4}" maxlength="4" required inputmode="numeric" min="1900" max="2025" value="2025"/>
+                            <input type="number" name="death_year" id="death_year" placeholder="YYYY" pattern="\d{4}" maxlength="4" required inputmode="numeric" min="2000" max="2025"/>
                         </div>
                     </label>
 
-                    <p>Was de overledene getrouwd of had de overledene een
-                        geregistreerd partner op het moment van overlijden? *</p>
-                    <div>
-                        <label>
-                            Nee
-                        </label>
-                        <input class="radio" type="radio" name="getrouwd" value="nee" required/>
-                        <label>
-                            Ja
-                        </label>
-                        <input type="radio" name="getrouwd" value="ja"/>
-                        <div class="expandable">
-                            <p>Hadden de overledene en diens echtgenoot of
-                                geregistreerd partner huwelijkse of partner schaps-
-                                voorwaarden laten vastleggen in een notariële akte? *</p>
-
+                    <fieldset class="fieldset-radio">
+                        <legend>Was de overledene getrouwd of had de overledene een
+                            geregistreerd partner op het moment van overlijden? *</legend>
+                        
                             <label>
                                 Nee
-                                <input type="radio" name="akte" value="nee"/>
+                                <input class="radio" type="radio" name="getrouwd" value="nee" required/>
                             </label>
-    
+                            
                             <label>
                                 Ja
-                                <input type="radio" name="akte" value="ja"/>
+                                <input type="radio" name="getrouwd" value="ja" class="checkbox-required"/>
                             </label>
-
-                            <p>Hadden de overledene en diens partner een finaal
-                                verrekenbeding? *</p>
-                            <label>
-                                Ja
-                                <input type="radio" name="finaal verrekenbeding" value="ja"/>
-                            </label>
-                            <label>
-                                Nee
-                                <input type="radio" name="finaal verrekenbeding" value="nee"/>
-                            </label>
-                        </div>
-                    </div>
-
+                            
+                            <div class="expandable">
+                                <fieldset class="fieldset-radio">
+                                    <legend>Hadden de overledene en diens echtgenoot of
+                                        geregistreerd partner huwelijkse of partner schaps-
+                                        voorwaarden laten vastleggen in een notariële akte? *</legend>
+        
+                                    <label>
+                                        Nee
+                                        <input type="radio" name="akte" value="nee"/>
+                                    </label>
+            
+                                    <label>
+                                        Ja
+                                        <input type="radio" name="akte" value="ja"/>
+                                    </label>
+                                </fieldset>
+                                
+                                <fieldset class="radio">
+                                    <legend>Hadden de overledene en diens partner een finaal
+                                        verrekenbeding? *</legend>
+                                    <label>
+                                        Ja
+                                        <input type="radio" name="finaal verrekenbeding" value="ja"/>
+                                    </label>
+                                    <label>
+                                        Nee
+                                        <input type="radio" name="finaal verrekenbeding" value="nee"/>
+                                    </label>
+                                </fieldset>
+                                <label>Datum huwelijkse of partnerschapsvoorwaarden *
+                                    <div>
+                                        <input type="number" name="huwelijk_day" id="huwelijk_day" placeholder="DD" pattern="\d{2}" maxlength="2" min="1" max="31"/>
+                                        <input type="number" name="huwelijk_month" id="huwelijk_month" placeholder="MM" pattern="\d{2}" maxlength="2" min="1" max="12"/>
+                                        <input type="number" name="huwelijk_year" id="huwelijk_year" placeholder="YYYY" pattern="\d{4}" maxlength="4" min="2000" max="2025"/>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                    </fieldset>
+                    <a href="#step2" id="volgende">Volgende</a>
                 </fieldset>
 
-                <!----------------- VOOR WIE DOET U AANGIFTE ---------------->
-                <fieldset>
-                    <legend>Voor wie doet u aangifte?</legend>
-                    <p>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen?
-                        Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).
-                        Lees de toelichting bij vraag 3a.
-                    </p>
-                    <label>
-                        Ik ben executeur en doe aangifte voor alle personen en/of instellingen die
-                        iets krijgen uit de nalatenschap (verkrijgers). Geef aan voor hoeveel verkrijgers u
-                        aangifte doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee.
-                    </label>
-                    <input type="radio" name="executeur" value="yes"/>
+                <!-- ---------------------- 2. GEGEVENS GEMACHTIGDE -------------------------->
 
-                    <label>
-                        Er is geen executeur aangewezen.
-                    </label>
-                    <input type="radio" name="executeur" value="no"/>
-                    <div class="expandable">
-                        <p>Selecteer welke situatie voor u geldt</p>
-                        <select name="choice">
-                            <option value="first">Ik ben erfgenaam en gemachtigd om aangifte te doen voor meerdere mensen</option>
-                            <option value="second" selected>ik ben erfgenaam en doe samen met andere erfgenamen aangifte</option>
-                            <option value="third">ik ben erfgenaam en doe voor mijzelf aangifte</option>
-                            <option value="fourth">ik ben geen erfgenaam, maar gemachtigd aangifte te doen</option>
-                        </select>
+                <fieldset id="step2" class="step">
 
-                          <div class="extra-field">
-                            <label>Voor hoeveel mensen doet u aangifte?</label>
-                            <input type="number" name="num_people" min="1" max="100" placeholder="Aantal personen">
+                    <legend class="hoofdkop"><b>Stap 2 van de 13</b><br><br> Gegevens gemachtigde</legend>
+                    <p>Vul de gegevens van de gemachtigde in. De gemachtigde is degene die namens 1 of meerdere personen en/of instellingen aangifte doet.
+                        Het invullen van een telefoonnummer of e-mailadres is niet verplicht, maar wel handig. Dan kunnen wij u makkelijker vragen stellen of uitleg geven.</p>
+
+                    <fieldset>
+                        <legend>Vul 1 van de 3 in: het burgerservicenummer of RSIN van de gemachtigde, het beconnummer van de adviseur of
+                            het protocolnummer van de notaris.</legend>
+                        <div>
+                            <label for="bsn">Burgerservicenummer *
+                                <input type="text" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                                maxlength="9" placeholder="Bijv. 123456789" required title="Vul een geldig 9-cijferig BSN in">
+                            </label>
+        
+                            <label for="bsn">Beconnummer adviseur *
+                                <input type="text" name="becon" inputmode="numeric" pattern="\d{6}" 
+                                maxlength="6" placeholder="Bijv. 123456">
+                            </label>
+        
+                            <label for="bsn">Protocolnummer notaris *
+                                <input type="text" name="protocol" inputmode="numeric" pattern="\d{6}" 
+                                maxlength="6" placeholder="Bijv. 123456">
+                            </label>
                         </div>
+                    </fieldset>
+                    
+                    
+                            
+                            
+                
+                    <div class="button-wrapper">
+                        <a href="#step1">Vorige</a>
+                        <a href="#step3" id="volgende">Volgende</a>
                     </div>
-
+                    
                 </fieldset>
 
-                <!-- ------------------- FIELDSET 3 ---------------------- -->
-                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                <!------------------------ 3. VOOR WIE DOET U AANGIFTE ----------------------->
+                <fieldset id="step3" class="step">
+                    <legend class="hoofdkop"><b>Stap 3 van de 13</b><br><br>Voor wie doet u aangifte?</legend>
+                    <fieldset id="checkbox">
+                        <label>
+                            <input type="checkbox">
+                            Ik ben executeur en doe aangifte voor alle personen en/of instellingen die
+                            iets krijgen uit de nalatenschap (verkrijgers).
+                        </label>
+                         
+                        <div class="inklap">
+                            <fieldset>
+                                <legend>Selecteer welke situatie voor u geldt</legend>
+                                <select name="choice">
+                                    <option value="first">Ik ben erfgenaam en gemachtigd om aangifte te doen voor meerdere mensen</option>
+                                    <option value="second" selected>ik ben erfgenaam en doe samen met andere erfgenamen aangifte</option>
+                                    <option value="third">ik ben erfgenaam en doe voor mijzelf aangifte</option>
+                                    <option value="fourth">ik ben geen erfgenaam, maar gemachtigd aangifte te doen</option>
+                                </select>
+                            </fieldset> 
+                        </div>
+                        </fieldset>
+                        <p id="verkrijger-titel">Klik op "Voeg verkrijger toe" om extra velden te tonen.</p>
+                            
+                                <!-- Hier komt de noscript fallback -->
+                                <noscript>
+                                    <style>
+                                        #verkrijger-titel, #verkrijgers-container, #add-verkrijger {
+                                            display: none;
+                                        }
+                                    </style>
+                                
+                                    <p>U heeft JavaScript uitgeschakeld. Vul hier handmatig de verkrijgers in:</p>
+                                    
+                                    <fieldset>
+                                        <legend class="legend-verkrijger">Verkrijger 1</legend>
+                                        <label>Voorletter(s), tussenvoegsel(s) en achternaam:
+                                            <input type="text" name="verkrijger_1_naam" required>
+                                        </label>
+                                        <label for="bsn">Burgerservicenummer *
+                                            <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                                            maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+                                        </label>
+                                        <label>Krijgt deze verkrijger het hele vermogen?</label>
+                                        <label><input type="radio" name="verkrijger_1_vermogen" value="nee" required> Nee</label>
+                                        <label><input type="radio" name="verkrijger_1_vermogen" value="ja" required> Ja</label>
+                                        <label>Doet deze verkrijger een beroep op diens legitieme portie?</label>
+                                        <label><input type="radio" name="verkrijger_1_legitieme" value="nee" required> Nee</label>
+                                        <label><input type="radio" name="verkrijger_1_legitieme" value="ja" required> Ja</label>
+                                    </fieldset>
+                                
+                                    <fieldset>
+                                        <legend class="legend-verkrijger">Verkrijger 2</legend>
+                                        <label>Voorletter(s), tussenvoegsel(s) en achternaam:
+                                            <input type="text" name="verkrijger_2_naam" required>
+                                        </label>
+                                        <label for="bsn">Burgerservicenummer *
+                                            <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                                            maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+                                        </label>
+                                        <label>Krijgt deze verkrijger het hele vermogen?</label>
+                                        <label><input type="radio" name="verkrijger_2_vermogen" value="nee" required> Nee</label>
+                                        <label><input type="radio" name="verkrijger_2_vermogen" value="ja" required> Ja</label>
+                                        <label>Doet deze verkrijger een beroep op diens legitieme portie?</label>
+                                        <label><input type="radio" name="verkrijger_2_legitieme" value="nee" required> Nee</label>
+                                        <label><input type="radio" name="verkrijger_2_legitieme" value="ja" required> Ja</label>
+                                    </fieldset>
+                                
+                                    <fieldset>
+                                        <legend>Verkrijger 3</legend>
+                                        <label class="legend-verkrijger">Voorletter(s), tussenvoegsel(s) en achternaam:
+                                            <input type="text" name="verkrijger_3_naam" required>
+                                        </label>
+                                        <label for="bsn">Burgerservicenummer *
+                                            <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                                            maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+                                        </label>
+                                        <label>Krijgt deze verkrijger het hele vermogen?</label>
+                                        <label><input type="radio" name="verkrijger_3_vermogen" value="nee" required> Nee</label>
+                                        <label><input type="radio" name="verkrijger_3_vermogen" value="ja" required> Ja</label>
+                                        <label>Doet deze verkrijger een beroep op diens legitieme portie?</label>
+                                        <label><input type="radio" name="verkrijger_3_legitieme" value="nee" required> Nee</label>
+                                        <label><input type="radio" name="verkrijger_3_legitieme" value="ja" required> Ja</label>
+                                    </fieldset>
+                                
+                                    <fieldset>
+                                        <legend class="legend-verkrijger">Verkrijger 4</legend>
+                                        <label>Voorletter(s), tussenvoegsel(s) en achternaam:
+                                            <input type="text" name="verkrijger_4_naam" required>
+                                        </label>
+                                        <label for="bsn">Burgerservicenummer *
+                                            <input type="text" id="bsn" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                                            maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+                                        </label>
+                                        <label>Krijgt deze verkrijger het hele vermogen?</label>
+                                        <label><input type="radio" name="verkrijger_4_vermogen" value="nee" required> Nee</label>
+                                        <label><input type="radio" name="verkrijger_4_vermogen" value="ja" required> Ja</label>
+                                        <label>Doet deze verkrijger een beroep op diens legitieme portie?</label>
+                                        <label><input type="radio" name="verkrijger_4_legitieme" value="nee" required> Nee</label>
+                                        <label><input type="radio" name="verkrijger_4_legitieme" value="ja" required> Ja</label>
+                                    </fieldset>
+                                </noscript>
+                        
+                                <!-- Dynamisch verkrijgersformulier met JavaScript -->
+                                <div id="verkrijgers-container">
+                                    <fieldset class="verkrijger">
+                                        <legend class="legend-verkrijger">Verkrijger 1</legend>
+                                        <div class="name">
+                                            <label for="first_name">Voornaam *
+                                                <input type="text" name="first_name" placeholder="Bijv. Vivanne" required />
+                                            </label>
+                
+                                            <label for="middle_name">Tussenvoegsel <i>Optioneel</i>
+                                                <input type="text" name="tussenvoegsel" placeholder="Bijv. van der"/>
+                                            </label>
+                
+                                            <label for="last_name">Achternaam *
+                                                <input type="text" name="last_name" placeholder="Bijv. Hoogendam" required />
+                                            </label>
+                                        </div>
+                                        <label for="bsn">Burgerservicenummer *
+                                            <input type="text" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                                            maxlength="9" placeholder="Bijv. 123456789" required title="Vul een geldig 9-cijferig BSN in">
+                                        </label>
+                                        <fieldset>
+                                            <legend>Krijgt deze verkrijger het hele vermogen?</legend>
+                                            <label><input type="radio" name="verkrijger_1_vermogen" value="nee" required> Nee</label>
+                                            <label><input type="radio" name="verkrijger_1_vermogen" value="ja" required> Ja</label>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>Doet deze verkrijger een beroep op diens legitieme portie?</legend>
+                                            <label><input type="radio" name="verkrijger_1_legitieme" value="nee" required> Nee</label>
+                                            <label><input type="radio" name="verkrijger_1_legitieme" value="ja" required> Ja</label>
+                                        </fieldset>
+                                    </fieldset>
+                                </div>
+
+                                <button type="button" id="add-verkrijger">Voeg verkrijger toe</button>
+                            
+                
+                    <div class="button-wrapper">
+                        <a href="#step2">Vorige</a>
+                        <a href="#step4" id="volgende">Volgende</a>  
+                    </div>
+                    
+                </fieldset>
+
+                <!-- ------------------- FIELDSET 4 ---------------------- -->
+                <fieldset id="step4" class="step">
+                    <label for="bsn">Burgerservicenummer *
+                        <input type="text" name="bsn" inputmode="numeric" pattern="\d{9}" 
+                        maxlength="9" required title="Vul een geldig 9-cijferig BSN in">
+                    </label>
+                    <a href="#step2" onclick="updateProgress(2)">Vorige</a>
+                    <button type="submit">Verzenden</button>
+                </fieldset>
+
+                
             </form>
         </section>
     </main>
+
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

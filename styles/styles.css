@@ -4,12 +4,20 @@
 }
 
 body {
+    text-overflow: "-";
     margin: 0;
     font-family: "NS Sans", Arial, sans-serif;
     background-color: var(--cc-black-95);
     color: #070721;
     line-height: 1.5625rem;
     min-width: 20rem;
+}
+
+header  {
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 section:nth-of-type(1) {
@@ -24,29 +32,58 @@ section:nth-of-type(1) {
 form {
     position: relative;
     margin: 0 auto;
-    padding: 5%;
     box-sizing: border-box;
   }
 
 fieldset {
     border: none;
     height: auto;
+    margin-bottom: 20px;
+
+    & legend {
+        padding-top: 30px;
+    }
 }
 
-/* buttons */
+.fieldset-radio {
+    & input[type="radio"] {
+        padding-right: 10px;
+    }
+}
 
-button{
+
+/* buttons en links */
+
+a{
+    display: flex;
     padding: 15px 30px;
     background-color: var(--cc-text-link);
     border-radius: 10px;
     border: none;
+    width: 100px;
+    justify-content: center;
     
     color: var(--cc-white);
     text-decoration: none;
 }
 
-button:hover{
+a:hover{
     background-color: var(--cc-text-link-hover);
+}
+
+button {
+    width: 160px;
+    padding: 15px 0px;
+    border-radius: 10px;
+    border: solid 3px rgb(255, 204, 0);
+    background-color: transparent;
+    margin: 20px;
+    margin-left: 0;
+    transition: .3s;
+}
+
+button:hover{
+    background-color: rgb(255, 204, 0);
 }
 
 /* --------- fieldset 1: Persoonsgegevens overlijdenspersoon ------------- */
@@ -57,11 +94,19 @@ form div {
     flex-direction: row;
 }
 
+form .button-wrapper {
+    justify-content: space-between;
+}
+
+form div:last-of-type {
+    margin-top: 50px;
+}
+
 form label {
     padding-top: 20px;
 }
 
-form label input {
+form label input[type="text"] {
     border: .0625rem solid #cdcdd3;
     display: block;
     height: 2.8125rem;
@@ -71,6 +116,15 @@ form label input {
     width: 250px;
 }
 
+form label input[type="number"] {
+    border: .0625rem solid #cdcdd3;
+    display: block;
+    height: 2.8125rem;
+    margin-right: 30px;
+    padding: 0px 10px;
+    border-radius: .25rem;
+    width: 250px;
+}
 #bsn {
     max-width: 70px;
 }
@@ -84,22 +138,137 @@ section:nth-of-type(1) form li:nth-of-type(4) div input{
     min-width: 50px;
 }
 
+/* -------------- target ------------------- */
+
+[id^=step]{
+    display: grid;
+}
+ 
+@supports selector(:target) {
+    [id^=step] {
+        display: none;
+    }
+ 
+    [id^=step]:target {
+        display: grid;
+    }
+
+    /* Maak alleen de eerste stap zichtbaar bij het laden van de pagina */
+    body:not(:has([id^=step]:target)) #step1 {
+        display: grid;
+    }
+}
+
+
+
 /* -------------------- radio buttons --------------------- */
 
-.expandable {
-    display: none;
-    padding: 10px;
-    margin-top: 5px;
-  }
+@supports selector(:checked){
+    .expandable {
+        display: none;
+        margin-top: 5px;
+      }
+    .inklap {
+        display: block;
+        margin-top: 5px;
+    }
+}
 
+/* + suppport has */
   /* Laat .expandable zien als "Yes" is geselecteerd */
-  input[type="radio"]:checked + .expandable {
+label:has(input[type="radio"]:checked) + .expandable {
     display: block;
 }
 
 
+label:has(input[type="checkbox"]:checked) ~ .inklap {
+    display: none;
+}
+
+select{
+    appearance: none;
+    background-color: #fff;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    height: 2.8125rem;
+    padding: 0 2.34375rem 0 .9375rem;
+
+    border: .0625rem solid #cdcdd3;
+    border-radius: .25rem;
+    transition: all .2scubic-bezier(.7,.27,.27,1);
+
+    color: #003082;
+    font-weight: 700;
+    height: 2.8125rem;
+    line-height: 1.5625rem;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+
+    background-image: url("data:image/svg+xml;charset%3DUS-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2235px%22%20height%3D%2235px%22%20viewBox%3D%220%200%2035%2035%22%20enable-background%3D%22new%200%200%2035%2035%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%20%3Cg%3E%20%20%3Cpolygon%20points%3D%2217.5%2C20.3%2012%2C14.8%2012%2C16.2%2017.5%2C21.7%2023%2C16.2%2023%2C14.8%20%20%20%22%2F%3E%20%3C%2Fg%3E%3C%2Fg%3E%3Cstyle%20type%3D%22text%2Fcss%22%3Ecircle%2C%20ellipse%2C%20line%2C%20path%2C%20polygon%2C%20polyline%2C%20rect%2C%20text%20%7B%20fill%3A%20%23003082%3B%20%7D%3C%2Fstyle%3E%3C%2Fsvg%3E");
+}
+
 /* --------- UX aspecten -------- */
 
-/* label::after:has(input:required) {
-    content: "*";
-} */
+
+input:required:user-valid {
+    border: 2px solid green;
+  }
+
+
+input:required:user-invalid {
+    border: 2px solid red;
+  }
+
+
+/* verkrijgers */
+
+.verkrijger {
+    border: 1px solid #d7d7d7f9;
+    margin-top: 50px;
+    padding: 50px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.legend-verkrijger {
+    position: absolute;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* progress bar */
+
+progress {
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.step {
+    display: none;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#step1:target ~ #progressbar {
+    value: 25;
+}
+
+#step2:target ~ #progressbar {
+    value: 50;
+}
+
+#step3:target ~ #progressbar {
+    value: 75;
+}
+
+#step4:target ~ #progressbar {
+    value: 100;
+}
