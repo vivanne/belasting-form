@@ -23,10 +23,13 @@ Ik heb de basic styling van ns gehaald. Van NS heb ik een formulier gekregen (va
 
 Ik heb gekozen voor bepaalde stukken uit het formulier. Allereerst omdat ik nog best beginnend ben met formulieren ga ik de basic invulvelden van 1a bouwen. Dan ga ik daarna door met gedeelte twee waar je op een gegeven moment 1 van de 3 nummers in moet voeren (zie bijlages hieronder). En dan pak ik deel 3 waar ik verkrijgers handmatig kan gaan toevoegen ipv een vast aantal.
 
-![1](./images/Screenshot 2025-03-19 at 13.33.20.png)
-![2](./images/Screenshot 2025-03-19 at 13.33.52.png)
-![3](./images/Screenshot 2025-03-19 at 13.34.26.png)
-![3](./images/Screenshot 2025-03-19 at 13.35.00.png)
+![1](./images/part1.png)
+
+![2](./images/part2.png)
+
+![3](./images/part3-a.png)
+
+![4](./images/part3-b.png)
 
 - **Probleem:** Tijdens de eerste paar dagen kon ik nog niet helemaal goed bepalen hoe nou een basisopzet voor een formulier eruit zou zien. Dit had ik gedaan doormiddel van ul en li elementen. In het gesprek op vrijdag kwam ik erachter dat dit overbodig was. En dat ik gebruik moest gaan maken van fieldset elementen.
 
