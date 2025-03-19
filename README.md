@@ -18,6 +18,7 @@
 - **Vorderingen:**
 
 ![basic stijling](./images/Screenshot%202025-03-19%20at%2012.42.40.png)
+
 Ik heb de basic styling van ns gehaald. Van NS heb ik een formulier gekregen (van Quinten) zie bronnenlijst.
 
 - **Probleem:** Tijdens de eerste paar dagen kon ik nog niet helemaal goed bepalen hoe nou een basisopzet voor een formulier eruit zou zien. Dit had ik gedaan doormiddel van ul en li elementen. In het gesprek op vrijdag kwam ik erachter dat dit overbodig was. En dat ik gebruik moest gaan maken van fieldset elementen.
@@ -30,7 +31,7 @@ Ik heb de basic styling van ns gehaald. Van NS heb ik een formulier gekregen (va
 
 ### 🎯 Doelen
 
-- [ ] HTML verder werken -> laat stijling voor later
+- [x] HTML verder werken -> laat stijling voor later
 
 ### ✅ To-Do Lijst
 
@@ -51,7 +52,6 @@ Ik heb de basic styling van ns gehaald. Van NS heb ik een formulier gekregen (va
 
 ### 🎯 Doelen
 
-- [x] HTML verder werken -> laat stijling voor later
 - [x] UX aspecten verwerken: error prevention/ meldingen bij lege invoer etc.
 
 ### ✅ To-Do Lijst
@@ -115,16 +115,16 @@ Ik heb mezelf een tijdlimiet van 35 minuten gegeven om verder uit te zoeken hoe 
 
 ### 🎯 Doelen
 
-- [x] HTML verder werken -> laat stijling voor later
-- [x] UX aspecten verwerken: error prevention/ meldingen bij lege invoer etc.
+- [x] Puntjes op de i en afronden van project
 
 ### ✅ To-Do Lijst
 
 - [x] @support fixen
 - [ ] Responsive maken
 - [x] Local storage
-- [ ] Validatie verbeteren -> teksten meegeven wanneer fout
+- [ ] Validatie verbeteren -> bijv. errormessages
 - [x] Read me volgooien
+- [ ] Javascript opschonen
 
 ### 📝 Obstakels & Notities
 
