@@ -1,64 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     const container = document.getElementById("verkrijgers-container");
-//     const addButton = document.getElementById("add-verkrijger");
-//     let verkrijgerCount = 1;
-//     const maxVerkrijgers = 10; // Maximaal 7 verkrijgers
-
-//     addButton.addEventListener("click", function () {
-//         if (verkrijgerCount < maxVerkrijgers) {
-//             // Voeg een nieuwe verkrijger toe, zonder validatie voor nu
-//             verkrijgerCount++;
-
-//             const fieldset = document.createElement("fieldset");
-//             fieldset.classList.add("verkrijger");
-//             fieldset.setAttribute("id", `verkrijger_${verkrijgerCount}`);
-//             fieldset.innerHTML = `
-//                 <legend>Verkrijger ${verkrijgerCount}</legend>
-//                 <div class="name">
-//                             <label for="first_name">Voornaam *
-//                                 <input type="text" name="first_name" placeholder="Bijv. Vivanne" required />
-//                             </label>
-
-//                             <label for="middle_name">Tussenvoegsel <i>Optioneel</i>
-//                                 <input type="text" name="tussenvoegsel" placeholder="Bijv. van der"/>
-//                             </label>
-
-//                             <label for="last_name">Achternaam *
-//                                 <input type="text" name="last_name" placeholder="Bijv. Hoogendam" required />
-//                             </label>
-
-//                     </div>
-//                 <label for="bsn">Burgerservicenummer *
-//                         <input type="text" name="bsn" inputmode="numeric" pattern="\d{9}" 
-//                         maxlength="9" placeholder="Bijv. 123456789" required title="Vul een geldig 9-cijferig BSN in">
-//                     </label>
-//                 <label>Krijgt deze verkrijger het hele vermogen?</label>
-//                 <label><input type="radio" name="verkrijger_${verkrijgerCount}_vermogen" value="nee" required> Nee</label>
-//                 <label><input type="radio" name="verkrijger_${verkrijgerCount}_vermogen" value="ja" required> Ja</label>
-//                 <label>Doet deze verkrijger een beroep op diens legitieme portie?</label>
-//                 <label><input type="radio" name="verkrijger_${verkrijgerCount}_legitieme" value="nee" required> Nee</label>
-//                 <label><input type="radio" name="verkrijger_${verkrijgerCount}_legitieme" value="ja" required> Ja</label>
-//                 <button type="button" class="remove-verkrijger">Verwijderen</button>
-//             `;
-
-//             container.appendChild(fieldset);
-
-//             // Voeg event listener toe voor verwijderen
-//             fieldset.querySelector(".remove-verkrijger").addEventListener("click", function () {
-//                 container.removeChild(fieldset);
-//                 verkrijgerCount--;
-//                 if (verkrijgerCount < maxVerkrijgers) {
-//                     addButton.disabled = false; // Activeer de knop als er minder dan maxVerkrijgers zijn
-//                 }
-//             });
-
-//             // Als het aantal verkrijgers gelijk is aan het maximum, zet de knop uit
-//             if (verkrijgerCount === maxVerkrijgers) {
-//                 addButton.disabled = true;
-//             }
-//         }
-//     });
-
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("verkrijgers-container");
     const addButton = document.getElementById("add-verkrijger");
@@ -250,26 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const gemachtigdeInputs = document.querySelectorAll('input[name="bsn"], input[name="becon"], input[name="protocol"]');
-
-//     function updateGemachtigdeInputs() {
-//         let hasFilledInput = Array.from(gemachtigdeInputs).some(input => input.value.length > 0);
-//         gemachtigdeInputs.forEach(input => {
-//             input.disabled = hasFilledInput && input.value.length === 0;
-//         });
-//     }
-
-//     gemachtigdeInputs.forEach(input => {
-//         input.addEventListener("input", updateGemachtigdeInputs);
-//     });
-
-//     // Controleer bij het laden van de pagina
-//     updateGemachtigdeInputs();
-// });
 
 
 // local storage?

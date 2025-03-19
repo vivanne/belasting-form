@@ -134,9 +134,9 @@ progress {
 ### ✅ To-Do Lijst
 
 - [x] @support fixen
-- [ ] Responsive maken
+- [x] Responsive maken
 - [x] Local storage
-- [ ] Validatie verbeteren -> bijv. errormessages
+- [x] Validatie verbeteren -> bijv. errormessages
 - [x] Read me volgooien
 - [ ] Javascript opschonen
 

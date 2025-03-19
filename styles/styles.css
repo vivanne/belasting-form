@@ -82,9 +82,62 @@ button {
     transition: .3s;
 }
 
-button:hover{
+button:hover{ 
     background-color: rgb(255, 204, 0);
 }
+/* -------------------- HEADER/ INDICATOR ------------------------ */
+
+.indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0px;
+}
+
+.indicator .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+#step-1 {
+    border-color:rgb(255, 204, 0);
+    background-color: rgb(255, 204, 0);
+    color: black;
+    transition: all 0.4s ease;
+}
+
+.indicator .line {
+    width: 30%;
+    height: 0px;
+    border-top: solid 2px black;
+    transition: all 0.4s ease;
+}
+
+#one,#two {
+    display: none;
+}
+
+#one:checked ~ .indicator #line-1,
+#two:checked ~ .indicator #line-2 {
+    border-color:  rgb(255, 204, 0);
+}
+
+#one:checked ~ .indicator #step-2,
+#two:checked ~ .indicator #step-3 {
+    border-color:rgb(255, 204, 0);
+    background-color: rgb(255, 204, 0);
+    color: black;
+    transition: all 0.4s ease;
+} 
+
 
 /* --------- fieldset 1: Persoonsgegevens overlijdenspersoon ------------- */
 
@@ -92,13 +145,15 @@ form div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    /* margin-top: 50px; */
 }
 
 form .button-wrapper {
     justify-content: space-between;
+    margin-top: 50px;
 }
 
-form div:last-of-type {
+form .name {
     margin-top: 50px;
 }
 
@@ -138,6 +193,10 @@ section:nth-of-type(1) form li:nth-of-type(4) div input{
     min-width: 50px;
 }
 
+
+.death{
+    margin-top: 10px;
+}
 /* -------------- target ------------------- */
 
 [id^=step]{
@@ -193,11 +252,30 @@ label:has(input[type="checkbox"]:checked) ~ .inklap {
     margin-top: 5px;
 }
 
+small {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    font-family: "NS Sans";
+    font-weight: normal;
+    max-width: 280px;
+}
+
+/* Toon de foutmelding pas nadat de gebruiker een ongeldige waarde heeft ingevoerd */
+input:required:user-invalid + small {
+    display: block;
+}
+
 @supports selector(:has(*)) {
     label:has([type="radio"]:not(:checked)) + .expandable {
         display: none;
     }
     label:has(input[type="checkbox"]:checked) ~ .inklap {
+        display: none;
+    }
+
+    label:has(input:required:user-valid) ~ small {
         display: none;
     }
 }
@@ -238,6 +316,21 @@ input:required:user-invalid {
     border: 2px solid red;
   }
 
+input:required:user-invalid::after {
+    content: attr(title);
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+    padding: 5px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
 
 /* verkrijgers */
 
@@ -259,10 +352,40 @@ input:required:user-invalid {
     display: none;
 }
 
+@media screen and (max-width: 510px) {
+    .verkrijger {
+        border: none;
+        margin-top: 50px;
+        padding: 0;
+        background-color: transparent;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    #step3 legend {
+        width: 60%;
+    }
+
+    #step3 label:has(input[type="checkbox"]) {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #step3 select {
+        width: 80vw;
+    }
+
+    #step3 select option {
+        font-size: 32px;
+    }
+  }
+
 
 /* progress bar */
 
-progress {
+/* progress {
     width: 100%;
     height: 20px;
     margin-top: 20px;
@@ -273,7 +396,7 @@ progress {
     display: none;
     margin-top: 20px;
     border-radius: 5px;
-}
+} */
 
 /* 
 #step1:target ~ #progressbar {
